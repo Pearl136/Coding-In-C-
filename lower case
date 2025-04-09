@@ -1,0 +1,19 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr()
+char ch;
+cout<<"enter a lower case alphabet";
+cin ch;
+{
+case a
+case e
+case i
+case o
+case u cout<<"You have entered vowel";
+        break;
+default:cout<<"You have entered constant";
+}
+getch();
+}
