@@ -1,0 +1,15 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr()
+int n,r;
+cout<<"Enter a number:";
+cin>>n;
+r=n%2;
+if(r==0)
+cout<<"the number u entered is even";
+else
+cout<<"the number u entered is odd";
+getch();
+}
