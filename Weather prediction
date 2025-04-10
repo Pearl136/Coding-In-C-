@@ -1,0 +1,44 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+
+# Load dataset (replace with your actual CSV file path or DataFrame)
+# Example CSV should have columns like: Temperature, Humidity, WindSpeed, etc.
+df = pd.read_csv("weather_data.csv")
+
+# Feature columns (excluding target)
+features = ["Humidity", "WindSpeed", "Pressure", "CloudCover"]
+target = "Temperature"  # This is what we want to predict
+
+# Drop rows with missing values
+df = df.dropna(subset=features + [target])
+
+# Split into features (X) and target (y)
+X = df[features]
+y = df[target]
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize and train model
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Predict on test set
+y_pred = model.predict(X_test)
+
+# Evaluate performance
+mae = mean_absolute_error(y_test, y_pred)
+print(f"Mean Absolute Error: {mae:.2f}")
+
+# Predicting new data (example)
+new_data = pd.DataFrame([{
+    "Humidity": 65,
+    "WindSpeed": 12,
+    "Pressure": 1012,
+    "CloudCover": 50
+}])
+prediction = model.predict(new_data)
+print(f"Predicted Temperature: {prediction[0]:.2f}°C")
+
