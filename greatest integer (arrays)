@@ -1,0 +1,23 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr()
+int arr[10],k,max;
+k=0;
+cout<<"enter numbers one in each line\n";
+while(k<10)
+{
+cin>>a[k]
+k=k+1;
+}
+max=arr[0];
+k=1;
+while(k<10)
+if(arr[k]>max)
+max=arr[k];
+cout<<"the biggest no is'<<max;
+getch();
+}
+
+}
