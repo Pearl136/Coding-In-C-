@@ -1,0 +1,20 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr()
+int n;
+cout<<"\nEnter a number:";
+cin>>n:
+if(n>0)
+cout<<"\n the number u entered is positive";
+else if(n<0)
+cout<<"\nthe number u entered is negative";
+else
+cout<<"\nthe number entered is equal to zero";
+getch();
+}
+ 
+    
+    
+       
